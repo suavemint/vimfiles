@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/eorcutt/root/tutorials/pyroot'
+let g:netrw_dirhist_2='/Users/eorcutt/github_repos/pdes/.git'
+let g:netrw_dirhist_3='/Users/eorcutt/.emacs.d'

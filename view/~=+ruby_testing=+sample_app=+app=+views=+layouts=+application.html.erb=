@@ -1,0 +1,122 @@
+let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
+argglobal
+let s:cpo_save=&cpo
+set cpo&vim
+cnoremap <buffer> <SNR>36_foldopen |if &foldopen =~# 'tag'|exe 'norm! zv'|endif
+nmap <buffer> gf <Plug>RailsTabFind
+nmap <buffer> f <Plug>RailsSplitFind
+nnoremap <buffer> <silent> g} :exe        "ptjump =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> } :exe          "ptag =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> g] :exe      "stselect =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> g :exe        "stjump =RubyCursorIdentifier()"
+nnoremap <buffer> <silent>  :exe v:count1."stag =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> ] :exe v:count1."stag =RubyCursorIdentifier()"
+nnoremap <buffer> <silent>  :exe  v:count1."tag =RubyCursorIdentifier()"
+nmap <buffer> gf <Plug>RailsFind
+nnoremap <buffer> <silent> g] :exe       "tselect =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> g :exe         "tjump =RubyCursorIdentifier()"
+let &cpo=s:cpo_save
+unlet s:cpo_save
+setlocal autoindent
+setlocal nobinary
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=:#
+setlocal commentstring=<%#%s%>
+setlocal complete=.,w,b,u,t,i
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'eruby'
+setlocal filetype=eruby
+endif
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=croql
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=0
+setlocal include=^\\s*\\<\\(load\\|w*require\\)\\>
+setlocal includeexpr=RailsIncludeexpr()
+setlocal indentexpr=GetErubyIndent()
+setlocal indentkeys=o,O,*<Return>,<>>,{,},0),0],o,O,!^F,=end,=else,=elsif,=rescue,=ensure,=when
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=ri
+setlocal nolinebreak
+setlocal nolisp
+setlocal nolist
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:],<:>
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=octal,hex
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=rubycomplete#Complete
+setlocal path=.,~/ruby_testing/sample_app/lib,~/ruby_testing/sample_app/vendor,~/ruby_testing/sample_app/app/models/concerns,~/ruby_testing/sample_app/app/controllers/concerns,~/ruby_testing/sample_app/app/controllers,~/ruby_testing/sample_app/app/helpers,~/ruby_testing/sample_app/app/mailers,~/ruby_testing/sample_app/app/models,~/ruby_testing/sample_app/app/*,~/ruby_testing/sample_app/app/views,~/ruby_testing/sample_app/app/views/application,~/ruby_testing/sample_app/public,~/ruby_testing/sample_app/spec,~/ruby_testing/sample_app/spec/controllers,~/ruby_testing/sample_app/spec/helpers,~/ruby_testing/sample_app/spec/mailers,~/ruby_testing/sample_app/spec/models,~/ruby_testing/sample_app/spec/views,~/ruby_testing/sample_app/spec/lib,~/ruby_testing/sample_app/spec/features,~/ruby_testing/sample_app/spec/requests,~/ruby_testing/sample_app/spec/integration,~/ruby_testing/sample_app/vendor/plugins/*/lib,~/ruby_testing/sample_app/vendor/plugins/*/test,~/ruby_testing/sample_app/vendor/rails/*/lib,~/ruby_testing/sample_app/vendor
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal noscrollbind
+setlocal shiftwidth=2
+setlocal noshortname
+setlocal nosmartindent
+setlocal softtabstop=2
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=.rb
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'eruby'
+setlocal syntax=eruby
+endif
+setlocal tabstop=2
+setlocal tags=~/ruby_testing/sample_app/tags,~/ruby_testing/sample_app/tmp/tags,./tags,tags,~/.rvm/gems/ruby-2.0.0-p576@railstut3e/gems/actionmailer-4.2.0.beta2/tags,~/.rvm/gems/ruby-2.0.0-p576@railstut3e/gems/actionpack-4.2.0.beta2/tags,~/.rvm/gems/ruby-2.0.0-p576@railstut3e/gems/actionview-4.2.0.beta2/tags,~/.rvm/gems/ruby-2.0.0-p576@railstut3e/gems/activejob-4.2.0.beta2/tags,~/.rvm/gems/ruby-2.0.0-p576@railstut3e/gems/activemodel-4.2.0.beta2/tags,~/.rvm/gems/ruby-2.0.0-p576@railstut3e/gems/activerecord-4.2.0.beta2/tags,~/.rvm/gems/ruby-2.0.0-p576@railstut3e/gems/activesupport-4.2.0.beta2/tags,~/.rvm/gems/ruby-2.0.0-p576@railstut3e/gems/arel-6.0.0.beta1/tags,~/.rvm/gems/ruby-2.0.0-p576@railstut3e/gems/bcrypt-ruby-3.1.2/tags,~/.rvm/gems/ruby-2.0.0-p576@railstut3e/gems/bootstrap-sass-3.2.0.0/tags,~/.rvm/gems/ruby-2.0.0-p576@railstut3e/gems/bootstrap-will_paginate-0.0.10/tags,~/.rvm/gems/ruby-2.0.0-p576@railstut3e/gems/builder-3.2.2/tags,~/.rvm/gems/ruby-2.0.0-p576@railstut3e/gems/byebug-3.4.0/tags,~/.rvm/gems/ruby-2.0.0-p
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 1 - ((0 * winheight(0) + 18) / 37)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+let &so = s:so_save | let &siso = s:siso_save
+doautoall SessionLoadPost
+" vim: set ft=vim :
